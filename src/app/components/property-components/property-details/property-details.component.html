@@ -1,0 +1,90 @@
+<div class="holder" *ngIf="selector == ''" (click)="closeSidebar()"   [ngStyle]="sideIsClosed ? expand : contract ">
+    <div class="return">
+    <i class="bi bi-arrow-return-left" (click)="return()"></i>
+    </div>
+    <form [formGroup]="myForm" >
+        <div class="image-upload">
+            <div class="upload">
+                <label for="file-input">
+                    <div class="img-wrapper"> 
+                    <p [ngStyle]="{'display':changed ? 'none' : 'block' }" >upload cover photos</p>
+                    <img [src]="changed ? last: default"  [ngStyle]="{'height':changed ? '200px' : '30px','width':changed ? '100%' : '60px' }"/>
+                    </div>
+                </label>
+                <input id="file-input" type="file" (change)="onFileChange($event)" multiple="multiple" accept="image/jpg, image/jpeg, image/png" />
+            </div>
+            <div class="image-list"> 
+                <img *ngFor="let image of imageSrc; let i= index" [src]="image" (click)="changeImage(i)" >
+            </div>
+        </div>
+        <div class="tenants"> 
+            <h4 class="title">{{property[index].propertyName}}</h4>
+            <div class="wrapper-contents">
+                <div class="about-me"> 
+                    <div class="toggle-seen">
+                        <span>Code</span>
+                        <span ><input  type="text" [value]="property[index].propertyCode" ></span>                           
+                    </div>
+                    <div class="toggle-seen">
+                        <span>Name</span>
+                        <span ><input  type="text" [value]="property[index].propertyName"></span>  
+                    </div>
+                </div>
+    
+                <div class="about-me"> 
+                    <div class="toggle-seen">
+                        <span>Title</span>
+                        <span ><input  type="text" [value]="property[index].title"></span>     
+                    </div>
+
+                    <div class="toggle-seen">
+                        <span>Status</span>
+                        <span ><input  type="text" [value]="property[index].status"></span>    
+                    </div>
+                </div>
+
+                <div class="about-me"> 
+                    <div class="toggle-seen">
+                        <span>Address</span>
+                        <span ><input  type="text" [value]="property[index].propertyAddress" ></span>     
+                    </div>
+
+                    <div class="toggle-seen">
+                        <span>Type</span>
+                        <span ><input  type="text" [value]="property[index].propertyType"></span>    
+                    </div> 
+                </div>
+            </div> 
+        </div>
+
+        <h4>Description</h4>
+        <div class="description">
+            <textarea>{{property[index].propertyDescription}}</textarea>
+        </div>
+    
+        <div class="tenants"> 
+            <h4>Contact</h4>
+            <div class="wrapper-contents">
+                <div class="about-me"> 
+                    <div class="toggle-seen">
+                        <span>Contact Name</span>
+                    <span ><input  type="text" [value]="property[index].contactName"></span>                           
+                    </div>
+    
+                    <div class="toggle-seen">
+                        <span>Phone Number</span> 
+                        <span ><input  type="text" [value]="property[index].phoneNumber"></span>  
+                    </div>
+                </div>
+                <div class="about-me"> 
+                    <div class="toggle-seen">
+                        <span>Email Address</span>
+                        <span ><input  type="text" [value]="property[index].emailAddress"></span>     
+                    </div> 
+                </div>
+            </div> 
+        </div>
+       <button class="bg-primary update-btn">UPDATE DETAILS</button>
+    </form>
+</div>
+<app-property-tenants *ngIf="selector == 'tenants'"></app-property-tenants>

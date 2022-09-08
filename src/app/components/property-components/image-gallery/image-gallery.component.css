@@ -1,0 +1,29 @@
+.slider-container{
+    display:flex;
+    flex-direction: row;
+    height: fit-content;
+    width: fit-content;
+    
+}
+
+.main{
+    height: 230px !important;
+    width: 580px !important;
+}
+
+.picsum-img-wrapper img{
+    height: 230px !important;
+    width: 580px !important;
+}
+
+
+
+.actions{
+    margin-left: 12px;
+    height:250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    width: 300px;
+}
+

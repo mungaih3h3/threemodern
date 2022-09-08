@@ -1,0 +1,19 @@
+<div class="holder"> 
+    
+    <table  #propertymanagertb >
+        <tr >
+            <th scope="col">Name</th>
+            <th scope="col">Position</th>
+            <th scope="col">Office</th>
+            <th scope="col">Salary</th>
+        </tr>
+        
+    
+        <tr *ngFor="let mocky of mockies"   >
+          <td>{{ mocky.name }}</td>
+          <td>{{ mocky.position }}</td>
+          <td>{{ mocky.office }}</td>
+          <td>{{ mocky.salary }}</td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,59 @@
+<div class="content"  *ngIf="opened" (click)="closeSidebar()" [ngStyle]="sideIsClosed ? expand : contract "> 
+<form class="form" [formGroup]="addServiceForm" (ngSubmit)="saveService()"> 
+    <p>Add Unit Service</p>
+    <div class="form-contents"> 
+        <div class="form-section">
+            <div class="form-field"> 
+            <label>Property</label>
+            <input type="text" formControlName="property"/>
+            </div>
+
+            <div class="form-field"> 
+            <label>Selected Choice</label>
+            <input type="text" formControlName="choice"/>
+            </div>
+
+            <div class="form-field"> 
+            <label>Property Unit</label>
+            <input type="text" formControlName="property_unit"/>
+            </div>
+
+            <div class="form-field"> 
+            <label>Service Code</label>
+            <input type="text" formControlName="service_code"/>
+            </div>
+
+            <div class="form-field"> 
+            <label>Service Month</label>
+            <input type="text" formControlName="service_month"/>
+            </div>
+
+            <div class="form-field">
+            <label >Service Cost</label>
+            <input type="text" formControlName="service_cost"/>
+            </div>
+
+            <div class="form-field">
+            <label>Service Status</label>
+            <input type="text" formControlName="service_status"/>
+            </div>
+        </div>
+
+    </div>
+    <div class="form-actions">
+        <button type="submit" [disabled]="addServiceForm">
+            Save 
+        </button>
+        <button (click)="closeForm()">
+            Close
+        </button>
+        <button (click)="resetForm()">
+            Reset
+        </button>
+
+    </div>
+</form>
+</div>
+
+
+

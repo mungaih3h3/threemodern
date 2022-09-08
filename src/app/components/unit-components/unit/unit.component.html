@@ -1,0 +1,73 @@
+<div class="holder" *ngIf="!selected" (click)="closeSidebar()" [ngStyle]="sideIsClosed ? expand : contract " > 
+  <div class="wrapper" *ngIf="action">
+    <div   class="action-tools">
+      <div class="dropdown">
+        <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class='bx bx-user-circle'></i>For
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" (click)="filterByTenant(tenant.tenant.firstName + ' '+ tenant.tenant.middleName)" *ngFor="let tenant of tenants ">{{tenant.tenant.firstname}}  {{tenant.tenant.middleName}}</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class='bx bxs-city'></i>Property
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" (click)="filterByProperty(property.propertyName)" *ngFor="let property of property">{{property.propertyName}}</a>
+        </div>
+      </div>
+    </div> 
+    <app-tool-bar (event)="operateOnTable($event)" [columns]="columns"></app-tool-bar>
+  </div>
+    <div class="card requests">
+      <div class="card-header border-transparent">
+      <h3 class="card-title">Units</h3>
+      <div class="card-tools">
+        <input type="text"  name="table_search"  placeholder="Filter"  [formControl]="filter">
+        <button type="button" class="btn btn-tool" data-card-widget="remove">
+          <i class="fas fa-search"></i>
+        </button>
+
+        <button type="button" class="btn btn-tool" data-card-widget="remove">
+          <i class='bx bxs-wrench' (click)="toggleActions()"></i>
+        </button>
+
+        <button type="button" class="btn btn-tool" data-card-widget="remove">
+            <i class="fas fa-plus" (click)="openSection('add')"></i>
+        </button>
+
+      </div>
+      </div>
+      
+      <div class="card-body p-0">
+      <div class="table-responsive">
+      <table class="table m-0"  #unitstb  >
+      <thead>
+        <tr >
+          <th *ngFor="let column of columns ">{{column}}</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let unit of units$ | async; index as i" (click)="showUnitDetails(i)">
+            <td><ngb-highlight [result]="unit.unitCode" [term]="filter.value"></ngb-highlight></td>
+            <td><ngb-highlight [result]="unit.unitName" [term]="filter.value"></ngb-highlight></td>
+            <td><ngb-highlight [result]="unit.unitDescription" [term]="filter.value"></ngb-highlight></td>
+            <td><ngb-highlight [result]="unit.rentAmount" [term]="filter.value"></ngb-highlight></td>
+            <td><ngb-highlight [result]="unit.rentDepositAmount" [term]="filter.value"></ngb-highlight></td>
+            <td><ngb-highlight [result]="unit.electricityMeter" [term]="filter.value"></ngb-highlight></td>
+            <td><ngb-highlight [result]="unit.waterMeter" [term]="filter.value"></ngb-highlight></td>
+            <td><ngb-highlight [result]="unit.unitStatus" [term]="filter.value"></ngb-highlight></td>
+        </tr> 
+      </tbody>
+      </table>
+      </div>
+      </div>
+  </div>  
+</div>
+
+<app-unit-details *ngIf= "selected =='details'" (event)="restore($event)" [units]="units" [index]="index"></app-unit-details>
+<app-add-unit-form *ngIf="selected == 'add'" (event)="restore($event)"></app-add-unit-form>
+
+

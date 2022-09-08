@@ -1,0 +1,12 @@
+<app-sidebar *ngIf="sideBarIsopen" ></app-sidebar>
+<app-searchbar  (event)="performAction($event)"></app-searchbar>
+<app-notifications-drawer *ngIf="notifyIsOpen" ></app-notifications-drawer>
+<app-messages-drawer  *ngIf="msgsIsOpen"></app-messages-drawer>
+<app-right-navigation-drawer [hidden]="!drawerIsOpen" class="slideout" (event)="closeDrawer($event)"></app-right-navigation-drawer>
+<app-acc-sidenav *ngIf="false" > </app-acc-sidenav>
+<router-outlet  (activate)="onOutletLoaded($event)"></router-outlet>
+
+
+
+
+

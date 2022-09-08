@@ -1,0 +1,23 @@
+<div class="search-bar"  [ngStyle]="sideIsClosed ? expand : contract "  > 
+    <i class='bx bx-menu icon' (click)="toggleSidebar()"></i>
+    <div class="search-box" > 
+        <input type="text" *ngIf="false" [(ngModel)]="query"  (change)="sendQuery()" /> 
+        <div class="search-btn" *ngIf="false"   (click)="search()"><i class='bx bx-search-alt-2'></i></div>
+    </div>
+
+    <span class="icon" (click)="openNotify()">
+    <i class='bx bxs-bell'  ></i>
+    <span class="badge bg-warning  navbar-badge">15</span>
+    </span>
+
+    <span class="icon">
+    <i class="fas fa-expand-arrows-alt fullscreen-icon" (click)="toggleFullscreen()"></i> 
+    </span>
+
+    <span class="icon">
+        <i class='bx bxs-grid icon' (click)="openDrawer()"></i>
+    </span>
+    
+</div>
+
+

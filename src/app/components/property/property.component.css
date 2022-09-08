@@ -1,0 +1,10 @@
+
+select{
+    width:140px;
+    padding: 3px 5px;
+    font-size: small;
+}
+
+.wrapper select{
+    display: block;
+}

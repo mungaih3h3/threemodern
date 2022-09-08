@@ -1,0 +1,52 @@
+<div class="content">
+    <form class="form">
+        <span class="cancel-btn" (click)="closeForm()">+</span>
+        <p>Land</p>
+        <div class="form-contents">
+            <div class="form-section">
+                <div class="form-field">
+                    <label for="propertyname">PropertyName</label>
+                    <input type="text"  name="propertyname">
+                </div>
+
+                <div class="form-field">
+                    <label for="propertyname">Location</label>
+                    <input />
+                </div>
+
+                
+                <div class="form-field">
+                    <label for="size">Size</label>
+                    <input type="number"  name="size">
+                </div>
+
+                
+                <div class="form-field">
+                    <label for="description">Description</label>
+                    <input type="text" name="description">
+                </div>
+
+                
+                <div class="form-field">
+                    <label for="rent">Price</label>
+                    <input type="number"  name="price">
+                </div>
+
+                
+                <label for="images">Images</label>
+                <input class="fileupload" type="file">
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="submit">
+                Save 
+            </button>
+            <button (click)="closeForm()">
+                Close
+            </button>
+            <button (click)="resetForm()">
+                Reset
+            </button>
+        </div>      
+    </form>
+</div>

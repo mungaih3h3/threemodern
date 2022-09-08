@@ -1,0 +1,76 @@
+<div class="content" (click)="closeSidebar()"   [ngStyle]="sideIsClosed ? expand : contract "   >
+    <form class="form" [formGroup]="addUnitForm">
+        <p>Property Unit</p>
+    <div class="form-contents">
+        <div class="form-section">
+            <div class="form-field">
+                <label>Property ID</label>
+                <select formControlName="propertyID" >
+                    <option *ngFor="let property  of property; let i=index " [value]="i+1" >{{property.propertyName}} </option>
+                </select>
+            </div>
+        
+            <div class="form-field">
+                <label >Unit Code</label>
+                <input type="text" formControlName="unitCode"/>
+            </div>
+        
+            <div class="form-field">
+                <label >Unit Name</label>
+                <input  type="text"  formControlName="unitName"/>
+            </div>
+            <div class="form-field">
+                <label>Unit Description</label>
+                <input type="text"   formControlName="unitDescription"/>
+            </div>
+            <div class="form-field">
+                <label>Rent Amount</label>
+                <input type="number"   formControlName="rentAmount"/>
+            </div>
+            <div class="form-field">
+                <label>Rent Deposit</label>
+                <input type="number"   formControlName="rentDeposit"/>
+            </div>
+        </div>
+        
+        <div class="form-section">
+            <div class="form-field">
+                <label>Electricity Meter</label>
+                <input type="text"   formControlName="electricityMeter"/>
+            </div>
+
+            <div class="form-field">
+                <label>Water Meter</label>
+                <input type="text"   formControlName="waterMeter"/>
+            </div>
+
+            <div class="form-field">
+                <label>Electricity Meter Share</label>
+                <select  formControlName="electricityMeterShare">
+                    <option *ngFor="let type of electricity_share" [value]="type.value" >{{type.viewValue}}</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label>Water Meter Share</label>
+                <select  formControlName="waterMeterShare">
+                    <option *ngFor="let status of water_share" [value]="status.value" >{{status.viewValue}}</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label>Unit Status</label>
+                <select  formControlName="unitStatus">
+                    <option *ngFor="let status of unit_status" [value]="status.value" >{{status.viewValue}}</option>
+                </select>
+            </div>
+        </div>
+        </div>
+        <div class="form-actions">
+            <button  (click)="saveUnit()"> Save </button>
+            <button (click)="closeForm()"> Close</button>
+            <button (click)="resetForm()"> Reset </button>
+        </div>
+        
+    </form>
+</div>    

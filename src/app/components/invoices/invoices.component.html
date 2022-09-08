@@ -1,0 +1,88 @@
+<div class="holder" *ngIf="!opened && !open && !details"  (click)="closeSidebar()" [ngStyle]="sideIsClosed ? expand : contract ">
+  <div class="wrapper"   *ngIf="action"> 
+    <div   class="action-tools">
+      <div class="dropdown">
+        <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class='bx bx-user-circle'></i>For
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" *ngFor="let tenant of tenants" (click)="filterByTenant(tenant.tenant.firstName+' '+tenant.tenant.middleName)">{{tenant.tenant.firstname}} {{tenant.tenant.middleName}}</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class='bx bx-calendar'></i> Unit
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" *ngFor="let unit of units" (click)="filterByUnit(unit.unitName)">{{unit.unitName}}</a>
+        </div>
+      </div>
+    </div> 
+
+    <app-tool-bar (event)="operateOnTable($event)" [columns]="columns"></app-tool-bar>
+  </div>
+    <div class="card requests">
+      <div class="card-header border-transparent">
+      <h3 class="card-title">Invoices</h3>
+      <div class="card-tools">
+
+      <input type="text"  name="table_search"  placeholder="Filter" [formControl]="filter">
+
+      <button type="button" class="btn btn-tool" data-card-widget="remove">
+      <i class="fas fa-search"></i>
+      </button>
+
+      <button type="button" class="btn btn-tool" data-card-widget="remove">
+        <i class='bx bxs-wrench' (click)="toggleActions()"></i>
+      </button>
+
+      <button type="button" class="btn btn-tool" data-card-widget="remove">
+          <i class="fas fa-plus" (click)="toggleCreate()"></i>
+      </button>
+
+      </div>
+
+      <div  class="dropdown-menu dropdown-menu-lg dropdown-menu-right show" style="left: inherit; right: 0px;" *ngIf="create">
+        <ul>
+            <li class="dropdown-item" (click)="openInvoiceForm()"> 
+               Create Tenant Invoice
+            </li>
+ 
+            <li class="dropdown-item" (click)="OpenBillForm()"> 
+               Create Bill Invoice
+            </li>
+        </ul> 
+     </div>
+      </div>
+      
+      <div class="card-body p-0">
+      <div class="table-responsive">
+      <table class="table m-0"  #propertytb  >
+      <thead>
+        <tr >
+          <th *ngFor="let column of columns ">{{column}}</th>
+        </tr>
+      </thead>
+      <tbody>
+          <ng-container  *ngFor="let data of details$ index as i "> 
+              <tr *ngFor="let  invoice of data.invoices index as j" (click)="openDetails(i,j)" >
+                <td><ngb-highlight [result]="invoice.invoiceNumber" [term]="filter.value"></ngb-highlight></td>
+                <td><ngb-highlight [result]="invoice.invoiceStatus" [term]="filter.value"></ngb-highlight></td>
+                <td><ngb-highlight [result]="invoice.monthlyRent" [term]="filter.value"></ngb-highlight></td>
+                <td><ngb-highlight [result]="invoice.totalPayable" [term]="filter.value"></ngb-highlight></td>
+                <td><ngb-highlight [result]="invoice.unitsUsed" [term]="filter.value"></ngb-highlight></td>
+              </tr> 
+          </ng-container>
+     
+      </tbody>
+      </table>
+      </div>
+      </div>
+  </div> 
+</div> 
+
+
+<app-invoice-details *ngIf="details"  [data]="details$"  [outerIndex]="outerIndex"  [innerIndex]="innerIndex"  (event)="restoreAfterDetails($event)"></app-invoice-details> 
+<app-tenant-invoice-form *ngIf="opened" [opened]="opened" (event)="restoreAfterInvoice($event)"></app-tenant-invoice-form>
+<app-add-bill-invoice-form *ngIf="open" [open]="open"  (event)="restoreAfterBill($event)"></app-add-bill-invoice-form> 

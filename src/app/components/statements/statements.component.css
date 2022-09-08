@@ -1,0 +1,5 @@
+table{
+    margin-top: 10px;
+}
+
+tr:last-child { background:#00000008; }

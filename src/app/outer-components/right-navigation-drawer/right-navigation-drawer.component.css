@@ -1,0 +1,27 @@
+.rightbar-link{
+    display: block;
+    color: white;
+    padding:10px 30px;
+    text-decoration: none;
+    cursor: pointer;    
+}
+
+.rightbar-item:first-of-type .rightbar-link{
+    line-height: 60px;
+    padding-left:60px;
+}
+
+.rightbar-item:first-of-type .rightbar-link i{
+    font-size: 24px;    
+}
+
+@media screen and (max-width: 720px){
+    .close-arrow{
+        display: none;
+    }
+
+    .rightbar-item:nth-of-type(2) .rightbar-link{
+        margin-top: 30px;
+    }
+
+}

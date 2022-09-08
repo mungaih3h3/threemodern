@@ -1,0 +1,39 @@
+
+<div class="slider-container"> 
+    <ngb-carousel class="main" #carousel [interval]="8000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+        <ng-template  ngbSlide *ngFor="let img of photos; index as i">
+        <div class="carousel-caption">
+            <h3>{{img.description}}</h3>
+        </div>
+        <div class="picsum-img-wrapper">
+      
+        <img [src]="img.path" [alt]="img.description">
+        </div> 
+        </ng-template>
+    </ngb-carousel>
+
+    <div class="actions">
+        <div class="form-check">
+            <input type="checkbox"  id="pauseOnHover" [(ngModel)]="pauseOnHover">
+            <label class="form-check-label" for="pauseOnHover">Pause on hover</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox"  id="pauseOnFocus" [(ngModel)]="pauseOnFocus">
+            <label class="form-check-label" for="pauseOnFocus">Pause on focus</label>
+        </div>
+        <!--
+        <div class="form-check">
+            <input type="checkbox"  id="unpauseOnArrow" [(ngModel)]="unpauseOnArrow">
+            <label class="form-check-label" for="unpauseOnArrow">Unpause when clicking  arrows</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox"  id="pauseOnIndicator" [(ngModel)]="pauseOnIndicator">
+            <label class="form-check-label" for="pauseOnIndicator">Pause when clicking navigation indicator</label>
+        </div> -->
+        <div class="form-check">
+            <button type="button" (click)="togglePaused()" class="btn btn-outline-dark btn-sm">
+            {{paused ? 'Cycle' : 'Pause' }}
+            </button>
+        </div>
+    </div>
+</div>

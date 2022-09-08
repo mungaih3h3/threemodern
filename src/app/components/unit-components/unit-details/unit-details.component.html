@@ -1,0 +1,136 @@
+<div class="holder" *ngIf="selector == ''" (click)="closeSidebar()"   [ngStyle]="sideIsClosed ? expand : contract ">
+    <div class="return">
+    <i class="bi bi-arrow-return-left" (click)="return()"></i>
+    </div>
+    <form>
+        <div class="tenants"> 
+            <h4 class="title">{{units[index].unitName}}</h4>
+            <div class="wrapper-contents">
+                <div class="about-me"> 
+                    <div class="toggle-seen">
+                        <span>Code</span>
+                        <span ><input  type="text" [value]="units[index].unitCode" ></span>                           
+                    </div>
+                    
+                    <div class="toggle-seen">
+                        <span>Name</span>
+                        <span ><input  type="text" [value]="units[index].unitCode"></span>  
+                    </div>
+                </div>
+    
+                <div class="about-me"> 
+                    <div class="toggle-seen">
+                        <span>Status</span>
+                        <span ><input  type="text" [value]="units[index].unitCode"></span>     
+                    </div>
+
+                    <div class="toggle-seen">
+                        <span>Rent</span>
+                        <span ><input  type="text" [value]="units[index].rentAmount"></span>    
+                    </div>
+                </div>
+
+                <div class="about-me"> 
+                    <div class="toggle-seen">
+                        <span>Rent Deposit</span>
+                        <span ><input  type="text" [value]="units[index].rentDepositAmount" ></span>     
+                    </div>
+
+                    <div class="toggle-seen">
+                        <span>Property ID</span>
+                        <span ><input  type="text" [value]="units[index].propertyID"></span>    
+                    </div> 
+                </div>
+            </div> 
+        </div>
+
+        <h4>Description</h4>
+        <div class="wrapper-contents">
+            <div class="description">
+                <textarea>{{units[index].unitDescription}}</textarea>
+            </div>
+        </div>
+    
+        <div class="tenants"> 
+            <h4>Tenants</h4>
+            <div class="wrapper-contents">
+                <div class="about-me"> 
+                    <div class="toggle-seen">
+                        <span ><input  type="text" value="Picasso Pablo" disabled></span>                           
+                    </div>
+    
+                    <div class="toggle-seen">
+                        <span ><input  type="text" value="Picasso Pablo" diabled></span>  
+                    </div>
+                </div>
+    
+                <div class="about-me"> 
+                    <div class="toggle-seen">
+                        <span ><input  type="text" value="Picasso Pablo" disabled></span>     
+                    </div>
+
+                    <div class="toggle-seen">
+                        <span ><input  type="text" value="Picasso Pablo" disabled></span>    
+                    </div>
+                </div>
+
+                <div class="about-me"> 
+                    <div class="toggle-seen">
+                        <span ><input  type="text" value="Picasso Pablo" disabled></span>     
+                    </div>
+
+                    <div class="toggle-seen">
+                        <span ><input  type="text" value="Picasso Pablo" disabled></span>    
+                    </div> 
+                </div>
+            </div> 
+
+            <div class="more">
+                <a (click)="showTenants()">View all tenants</a>
+            </div> 
+        </div>
+
+        <div class="services">
+            <h4>Services</h4>
+            <div class="wrapper-contents">
+                <div class="about-me"> 
+                    <div class="toggle-seen">
+                        <span>Internet</span>
+                        <span style="opacity: 1;"><input  type="text" value="6000"></span>   
+                    </div>
+    
+                    <div class="toggle-seen">
+                        <span>Electricity</span>
+                        <span><input  type="text" value="20,000"></span>
+                    </div>
+                </div>
+    
+                <div class="about-me"> 
+                    <div class="toggle-seen">
+                        <span>Water</span>
+                        <span><input  type="text" value="6000"></span>   
+                    </div>
+
+                    <div class="toggle-seen">
+                        <span>Sewer</span>
+                        <span><input  type="text" value="2000"></span>   
+                    </div>
+                </div>
+
+                <div class="about-me"> 
+                    <div class="toggle-seen">
+                        <span>Trash</span>
+                        <span><input  type="text" value="2000"></span>   
+                    </div>
+
+                    <div class="toggle-seen">
+                        <span>Cleaning</span>
+                        <span><input  type="text" value="2000"></span>   
+                    </div> 
+                </div>
+            </div> 
+        </div>
+        <button class="bg-primary update-btn">UPDATE DETAILS</button>
+    </form>
+</div>
+<app-property-tenants *ngIf="selector == 'tenants'"></app-property-tenants>

@@ -1,0 +1,13 @@
+.form-field label{
+    width: 150px;
+}
+
+@media screen and (max-width: 720px){
+    .form-field label{
+        width:120px;
+        font-weight: 500 !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+       }
+}

@@ -1,0 +1,194 @@
+
+<div class="input-group">
+    <input type="search" class="form-control form-control-lg" placeholder="Type your keywords here">
+    <div class="input-group-append">
+    <button type="submit" class="btn btn-lg btn-default">
+    <i class="fa fa-search"></i>
+    </button>
+    </div>
+</div>
+
+<div class="holder">
+        <div  *ngFor="let data of data "  class="card bg-light"  >
+            <div class="card-body">
+            <div class="row">
+            <div class="col-7">
+            <h2 class="lead"><b>{{data.tenant.firstName}} {{data.tenant.middleName}} </b></h2>
+            <p class="text-muted text-sm"><b>Tenant since</b> {{data.fromDate}}</p>
+            <ul class="ml-4 mb-0 fa-ul text-muted">
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-home"></i></span>{{data.propertyUnit.unitName}}</li>
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span>Phone :  {{data.tenant.phoneNumber}}</li>
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-envelope"></i> </span>Email :  {{data.tenant.emailAddress}}</li>   
+            </ul>
+            </div>
+            <div class="col-5 text-center">
+            <img src="../../../../assets/images/default-user.jpg" alt="user-avatar" class="img-circle img-fluid">
+            </div>
+            </div>
+            </div>
+            <div class="card-footer">
+            <div class="text-right">
+            <a  class="btn btn-sm bg-success">
+            <i class="fas fa-comments"></i>
+            </a>
+            <a  class="btn btn-sm bg-primary">
+            <i class="fas fa-user"></i> View Profile
+            </a>
+            </div>
+            </div>
+        </div> 
+        <div class="card bg-light">
+            <div class="card-body">
+            <div class="row">
+            <div class="col-7">
+            <h2 class="lead"><b>Nicole Pearson</b></h2>
+            <p class="text-muted text-sm"><b>Tenant since</b> Dec 2017</p>
+            <ul class="ml-4 mb-0 fa-ul text-muted">
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>Neth Apartments, Church Road Westands</li>
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-home"></i></span>House 101B-4</li>
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone : 0712345678</li>
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-envelope"></i></span> Email :pearson@gmail.com</li>   
+            </ul>
+            </div>
+            <div class="col-5 text-center">
+            <img src="../../../../assets/images/user3.jpg" alt="user-avatar" class="img-circle img-fluid">
+            </div>
+            </div>
+            </div>
+            <div class="card-footer">
+            <div class="text-right">
+            <a  class="btn btn-sm bg-success">
+            <i class="fas fa-comments"></i>
+            </a>
+            <a  class="btn btn-sm bg-primary">
+            <i class="fas fa-user"></i> View Profile
+            </a>
+            </div>
+            </div>
+        </div> 
+
+        <div class="card bg-light">
+            <div class="card-body">
+            <div class="row">
+            <div class="col-7">
+            <h2 class="lead"><b>Nicole Pearson</b></h2>
+            <p class="text-muted text-sm"><b>Tenant since</b> Dec 2017</p>
+            <ul class="ml-4 mb-0 fa-ul text-muted">
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>Neth Apartments, Church Road Westands</li>
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-home"></i></span>House 101B-4</li>
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone : 0712345678</li>
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-envelope"></i></span> Email :pearson@gmail.com</li>   
+            </ul>
+            </div>
+            <div class="col-5 text-center">
+            <img src="../../../../assets/images/user3.jpg" alt="user-avatar" class="img-circle img-fluid">
+            </div>
+            </div>
+            </div>
+            <div class="card-footer">
+            <div class="text-right">
+            <a  class="btn btn-sm bg-success">
+            <i class="fas fa-comments"></i>
+            </a>
+            <a  class="btn btn-sm bg-primary">
+            <i class="fas fa-user"></i> View Profile
+            </a>
+            </div>
+            </div>
+        </div> 
+
+        <div class="card bg-light">
+            <div class="card-body">
+            <div class="row">
+            <div class="col-7">
+            <h2 class="lead"><b>Nicole Pearson</b></h2>
+            <p class="text-muted text-sm"><b>Tenant since</b> Dec 2017</p>
+            <ul class="ml-4 mb-0 fa-ul text-muted">
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>Neth Apartments, Church Road Westands</li>
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-home"></i></span>House 101B-4</li>
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone : 0712345678</li>
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-envelope"></i></span> Email :pearson@gmail.com</li>   
+            </ul>
+            </div>
+            <div class="col-5 text-center">
+            <img src="../../../../assets/images/user3.jpg" alt="user-avatar" class="img-circle img-fluid">
+            </div>
+            </div>
+            </div>
+            <div class="card-footer">
+            <div class="text-right">
+            <a  class="btn btn-sm bg-success">
+            <i class="fas fa-comments"></i>
+            </a>
+            <a  class="btn btn-sm bg-primary">
+            <i class="fas fa-user"></i> View Profile
+            </a>
+            </div>
+            </div>
+        </div> 
+
+        <div class="card bg-light">
+            <div class="card-body">
+            <div class="row">
+            <div class="col-7">
+            <h2 class="lead"><b>Nicole Pearson</b></h2>
+            <p class="text-muted text-sm"><b>Tenant since</b> Dec 2017</p>
+            <ul class="ml-4 mb-0 fa-ul text-muted">
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>Neth Apartments, Church Road Westands</li>
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-home"></i></span>House 101B-4</li>
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone : 0712345678</li>
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-envelope"></i></span> Email :pearson@gmail.com</li>   
+            </ul>
+            </div>
+            <div class="col-5 text-center">
+            <img src="../../../../assets/images/user3.jpg" alt="user-avatar" class="img-circle img-fluid">
+            </div>
+            </div>
+            </div>
+            <div class="card-footer">
+            <div class="text-right">
+            <a  class="btn btn-sm bg-success">
+            <i class="fas fa-comments"></i>
+            </a>
+            <a  class="btn btn-sm bg-primary">
+            <i class="fas fa-user"></i> View Profile
+            </a>
+            </div>
+            </div>
+        </div> 
+
+        <div class="card bg-light">
+            <div class="card-body">
+            <div class="row">
+            <div class="col-7">
+            <h2 class="lead"><b>Nicole Pearson</b></h2>
+            <p class="text-muted text-sm"><b>Tenant since</b> Dec 2017</p>
+            <ul class="ml-4 mb-0 fa-ul text-muted">
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>Neth Apartments, Church Road Westands</li>
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-home"></i></span>House 101B-4</li>
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone : 0712345678</li>
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-envelope"></i></span> Email :pearson@gmail.com</li>   
+            </ul>
+            </div>
+            <div class="col-5 text-center">
+            <img src="../../../../assets/images/user3.jpg" alt="user-avatar" class="img-circle img-fluid">
+            </div>
+            </div>
+            </div>
+            <div class="card-footer">
+            <div class="text-right">
+            <a  class="btn btn-sm bg-success">
+            <i class="fas fa-comments"></i>
+            </a>
+            <a  class="btn btn-sm bg-primary">
+            <i class="fas fa-user"></i> View Profile
+            </a>
+            </div>
+            </div>
+        </div> 
+
+
+       
+        
+        
+</div>

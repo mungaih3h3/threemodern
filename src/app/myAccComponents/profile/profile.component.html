@@ -1,0 +1,112 @@
+<div class="acc-holder">
+    <i class='bx bx-menu icon  acc-close' (click)="toggleSidebar()"></i>
+    <div class="inner">
+        <div class="top-profile "> 
+            <h2>Profile and Visibility</h2>
+            <p>Manage your personal information, and control which information other people see and apps may accces</p>
+            <a>Learn more about your profile Visibility <span>or</span> view our privacy policy</a>
+        </div>
+
+       
+        <span>Profile photo and header image</span>
+        <div  class="header-image wrapper-contents">
+            <div id="top-section">
+                <img src="../../../assets/images/default-user.jpg">
+            </div> 
+            <div id="bottom-section"> 
+                <div class="toggle-seen float-right">
+                    <span>Who can see your profile photo?</span>
+                    <span><i class="fas fa-globe"></i>Anyone</span>
+                </div>
+            </div>
+        </div>
+    
+        
+        <span>About You</span>
+        <div class="wrapper-contents">
+            <div class="about-me"> 
+                <div class="toggle-seen" *ngFor="let info of account_info">
+                    <span >Full name</span>
+                    <span style="opacity: 1;">{{info.names}}</span>   
+                </div>
+
+                <div class="toggle-seen">
+                    <span>Who can see this?</span>
+                    <span><i class="fas fa-globe"></i>Anyone</span>
+                </div>
+            </div>
+
+            <div class="about-me"> 
+                <div class="toggle-seen">
+                    <span>Public Name</span>
+                    <span>Yousir User</span>   
+                </div>
+
+                <div class="toggle-seen">
+                    <span>Who can see this?</span>
+                    <span><i class="fas fa-globe"></i>Anyone</span>
+                </div>
+            </div>
+
+            <div class="about-me"> 
+                <div class="toggle-seen">
+                    <span>Category</span>
+                    <span>Property Sales Agency</span>   
+                </div>
+
+                <div class="toggle-seen">
+                    <span>Who can see this?</span>
+                    <span><i class="fas fa-globe"></i>Anyone</span>
+                </div>
+            </div>
+
+            <div class="about-me"> 
+                <div class="toggle-seen">
+                    <span>Organization</span>
+                    <span>Smart Estates Holdings</span>   
+                </div>
+
+                <div class="toggle-seen">
+                    <span>Who can see this?</span>
+                    <span><i class="fas fa-globe"></i>Anyone</span>
+                </div>
+            </div>
+
+            <div class="about-me"> 
+                <div class="toggle-seen">
+                    <span>Based In</span>
+                    <span>Nairobi,Kenya</span>   
+                </div>
+
+                <div class="toggle-seen">
+                    <span>Who can see this?</span>
+                    <span><i class="fas fa-globe"></i>Anyone</span>
+                </div>
+            </div>
+
+
+        </div> 
+   
+
+        <span>Contact</span>
+        <div class="wrapper-contents"> 
+            <div class="about-me">
+                <div class="toggle-seen" *ngFor="let info of account_info">
+                    <span >Email</span>
+                    <span style="opacity: 1;"></span>   
+                </div>
+
+                <div class="toggle-seen">
+                    <span>Who can see this?</span>
+                    <span><i class="fas fa-globe"></i>Anyone</span>
+                </div>
+            </div>
+        </div>
+        </div>
+ 
+</div>
+
+
+
+
+

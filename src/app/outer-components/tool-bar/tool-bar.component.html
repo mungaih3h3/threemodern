@@ -1,0 +1,14 @@
+<div  class="tool-bar">
+    <button (click)="actOnTable()">Excel</button>
+    <button (click)="actOnTable()">Pdf</button>
+    <button (click)="actOnTable()">Print</button>
+    <button  (click)="showColumns()">Column Visibility</button>
+
+    <div  *ngIf="showColumn" class="dropdown-menu dropdown-menu-lg dropdown-menu-right show" style="left: inherit; right: 0px;">
+       <ul *ngFor="let column of columns">
+            <li class="dropdown-item"> 
+             {{column}}
+            </li>
+        </ul> 
+    </div>
+</div>

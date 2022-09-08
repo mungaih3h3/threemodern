@@ -1,0 +1,115 @@
+<div class="holder" [ngStyle]="sideIsClosed ? expand : contract " (click)="closeSidebar()"   >
+<ng-container  > 
+    <section class="print-preview">
+    <div class="container">
+    <div class="row">
+    <div class="col-12">
+    <div #invoice class="invoice p-3 mb-3">
+    <div class="row">
+    <div class="col-12 top-content" >
+    <small class="float-right"></small>
+    </div>
+    </div>
+    
+    <div class="row invoice-info">
+    <div class="col-sm-4 invoice-col">
+    <strong>From</strong>
+    <address>
+    <strong>Pablo Picasso</strong><br>
+    795 Folsom Ave, Suite 600<br>
+    San Francisco, CA 94107<br>
+    Phone: (804) 123-5432<br>
+    Email: info@almasaeedstudio.com
+    </address>
+    </div>
+    <!---->
+    <div class="col-sm-4 invoice-col">
+    <strong>To</strong>
+    <address>
+    <strong>{{data[outerIndex].tenant.firstName}}  {{data[outerIndex].tenant.middleName}}</strong><br>
+    {{data[outerIndex].tenant.address}}<br>
+    {{data[outerIndex].tenant.phoneNumber}}<br>
+    {{data[outerIndex].tenant.emailAddress}}
+    </address>
+    </div>
+    
+    <div class="col-sm-4 invoice-col">
+    <b>Invoice</b>  #{{data[outerIndex].invoices[innerIndex].invoiceNumber}}<br>
+    <br>
+    <b>Invoice ID:</b> {{data[outerIndex].invoices[innerIndex].invoiceID}}<br>
+    <b>Payment Due:</b> {{data[outerIndex].invoices[innerIndex].invoiceDate}}<br>
+    <b>Account:</b> 
+    </div>
+    
+    </div>
+
+    
+    <div class="row bottom-content">
+    
+    <div class="col-6">
+        <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
+            {{data[outerIndex].invoices[innerIndex].invoiceMessage}}
+        </p>
+
+        <p class="lead">Payment Methods:</p>
+        <img src="../../assets/images/visa.png" alt="Visa">
+        <img src="../../assets/images/mpesa.png" alt="Mpesa">
+        <img src="../../assets/images/AirtelMoney.png" alt="Airtel Money">
+    </div>
+    
+    <div class="col-6">
+    <p class="lead">Amount Due <b>{{data[outerIndex].invoices[innerIndex].invoiceDate}}</b> </p>
+    <div class="table-responsive">
+    <table class="table">
+    <tbody><tr>
+    <th style="width:50%">Monthly Rent</th>
+    <td>{{data[outerIndex].invoices[innerIndex].monthlyRent}}</td>
+    </tr>
+    <tr>
+    <th>Rent Payable</th>
+    <td>{{data[outerIndex].invoices[innerIndex].rentPayable}} </td>
+    </tr>
+    <tr>
+    <th>Water Cost Per Unit:</th>
+    <td>{{data[outerIndex].invoices[innerIndex].waterCostPerUnit}}</td>
+    </tr>
+    <tr>
+    <th>Water Cost Payable</th>
+    <td>{{data[outerIndex].invoices[innerIndex].waterCostPayable}}</td>
+    </tr>
+
+    <tr>
+    <th>Previous Rent Balance</th>
+    <td>{{data[outerIndex].invoices[innerIndex].previousRentBalance}}</td>
+    </tr>
+
+    <tr> 
+    <th>Previous Water Balance</th> 
+    <td>{{data[outerIndex].invoices[innerIndex].previousWaterBalance}}</td>
+    </tr>
+
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+
+    <div class="row no-print">
+    <div class="col-12">
+    <a  rel="noopener" target="_blank" class="btn btn-default" (click)="return()"><i class="fas fa-arrow-left"></i> Return</a>
+    <button type="button" class="btn btn-success float-right"  (click)="printInvoice()"><i class="fas fa-print"></i>
+     Print
+    </button>
+    </div>
+    </div>
+    </div>
+    
+    </div>
+    </div>
+    </div>
+    </section>
+  
+
+</ng-container>
+</div>
+

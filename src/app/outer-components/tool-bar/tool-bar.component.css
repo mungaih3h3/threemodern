@@ -1,0 +1,22 @@
+.dropdown-menu{
+    position: absolute;
+    top:-2px;
+}
+
+li{
+    padding: 8px 10px;
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+.clicked{
+    background-color: blue;
+    color:white
+}
+
+
+i{
+    color:white;
+}
+
+

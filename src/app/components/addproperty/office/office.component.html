@@ -1,0 +1,79 @@
+<div class="content" >
+    <form class="form" >
+        <span class="cancel-btn" (click)="closeForm()">+</span>
+        <p>Office</p>
+        <div class="form-contents">
+            <div class="form-section">
+                <div class="form-field">
+                    <label for="propertyname">PropertyName</label>
+                    <input type="text"  name="propertyname" >
+                </div>
+
+            
+                <div class="form-field" >
+                    <label for="location">Location</label>
+                    <input type="text"  name="location">
+                </div>
+
+            
+                <div class="form-field">
+                    <label for="size">Size</label>
+                    <input type="number"  name="size">
+                </div>
+
+                    
+                <div class="form-field">
+                    <label for="description">Description</label>
+                    <input type="text" name="description" >
+                </div>
+
+            
+                <div class="form-field">
+                    <label for="rent">Rent</label>
+                    <input type="number"  name="rent" >
+                </div>
+            </div>
+
+            <div class="form-section">   
+                <input type="checkbox"  name="parking" >
+                <label for="parking">Parking</label>
+                <br>
+
+                <input type="checkbox"  name="wifi" >
+                <label for="wifi">WIFI</label>
+                <br>
+
+                <input type="checkbox"   name="backupgenerator" >
+                <label for="backupgenerator">Backup generator</label>
+                <br>
+
+                <input type="checkbox"   name="furnished" >
+                <label for="furnished">Furnished</label>
+                <br>
+
+                <input type="checkbox" name="cctv" >
+                <label for="cctv">CCTV</label>
+                <br> 
+
+                <input type="checkbox"  name="wheelchair" >
+                <label for="wheelchair">Wheelchair access</label>
+                <br> 
+                
+            
+                <label for="images">Images</label>
+                <input class="fileupload" type="file" onchange="readURL(this)" accept="Image/*">
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="submit">
+                Save 
+            </button>
+            <button (click)="closeForm()">
+                Close
+            </button>
+            <button (click)="resetForm()">
+                Reset
+            </button>
+        </div>
+    </form>
+</div>

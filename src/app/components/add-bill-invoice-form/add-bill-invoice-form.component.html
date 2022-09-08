@@ -1,0 +1,55 @@
+<div class="content" (click)="closeSidebar()" [ngStyle]="sideIsClosed ? expand : contract ">
+<form class="form"  [formGroup]="addBillInvoiceForm" (ngSubmit)="saveBillInvoice()"> 
+        <p>Add Bill Invoice</p>
+        <div class="form-contents"> 
+            <div class="form-section">
+                <div class="form-field">
+                    <label>Service</label>
+                    <input  type="text" formControlName="service" />
+                </div>
+                <div class="form-field">
+                <label>Account</label>
+                <input  type="text" formControlName="account" />
+                </div>
+                <div class="form-field">
+                <label>Unit Name</label>
+                <input  type="text" formControlName="unit_name" />
+                </div>
+    
+                <div class="form-field">
+                <label>Tenant ID</label>
+                <input  type="text" formControlName="tenant_id"/>
+                </div>
+    
+                <div class="form-field">
+                <label>Tenant</label>
+                <input  type="text" formControlName="tenant" />
+                </div>
+
+                <div class="form-field">
+                    <label>Service Month</label>
+                    <input  type="date" formControlName="service_month" />
+                </div>
+
+                <div class="form-field">
+                    <label>Service Cost</label>
+                    <input  type="text" formControlName="service_cost" />
+                </div>
+            </div>
+          </div>   
+        <div class="form-actions">
+            <button type="submit" [disabled]="addBillInvoiceForm">
+                Save 
+            </button>
+            <button (click)="closeForm()">
+                Close
+            </button>
+            <button (click)="resetForm()">
+                Reset
+            </button>
+        </div>
+    </form>
+    </div>
+    
+    
+    

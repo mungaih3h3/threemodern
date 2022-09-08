@@ -1,0 +1,64 @@
+<div class="content" *ngIf="opened" (click)="closeSidebar()"  [ngStyle]="sideIsClosed ? expand : contract "> 
+    <form id="payment-form" class="form"  [formGroup]="addPaymentForm" (ngSubmit)="savePayment()"> 
+        <p>{{title}}</p>
+        <div class="form-contents"> 
+            <div class="form-section">
+                <div class="form-field"> 
+                <label>Property</label>
+                <input type="text" formControlName="property"/>
+                </div>
+    
+                <div class="form-field"> 
+                <label>Property Unit</label>
+                <input type="text" formControlName="property_unit"/>
+                </div>
+    
+                <div class="form-field"> 
+                <label>Tenant</label>
+                <input type="text" formControlName="tenant"/>
+                </div>
+    
+                <div class="form-field"> 
+                <label>Payment Mode</label>
+                <input type="text" formControlName="payment_mode"/>
+                </div>
+    
+                <div class="form-field"> 
+                <label>Pay Date</label>
+                <input type="text" formControlName="pay_date"/>
+                </div>
+    
+                <div class="form-field">
+                <label >Service Cost</label>
+                <input type="text" formControlName="service_cost"/>
+                </div>
+    
+                <div class="form-field">
+                <label>Service Status</label>
+                <input type="text" formControlName="service_status"/>
+                </div>
+            </div>
+    
+        </div>
+        <div class="form-actions">
+            <button type="submit" [disabled]="addPaymentForm">
+                Save 
+            </button>
+            <button (click)="closeForm()">
+                Close
+            </button>
+            <button (click)="resetForm()">
+                Reset
+            </button>
+        </div>
+    </form>
+    </div>
+    
+
+
+
+
+    
+    
+
+    

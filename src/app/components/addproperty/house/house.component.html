@@ -1,0 +1,113 @@
+<div class="content"  (click)="closeSidebar()" [ngStyle]="sideIsClosed ? expand : contract "    >
+
+    <form class="form" [formGroup]="addPropertyForm">
+        <p>Property</p>
+    <div class="form-contents">
+        <div class="form-section">      
+            <div class="form-field">
+                <label >Manager ID</label>
+                <input type="number" formControlName="propertyManagerID"/>
+            </div>
+        
+            <div class="form-field">
+                <label >Property Code</label>
+                <input  type="text"  formControlName="propertyCode"/>
+            </div>
+            <div class="form-field">
+                <label>Property Name</label>
+                <input type="text"   formControlName="propertyName"/>
+            </div>
+            <div class="form-field">
+                <label >Reference No.</label>
+                <input type="text"   formControlName="referenceNumber"/>
+            </div>
+            <div class="form-field">
+                <label >Description</label>
+                <input type="text"   formControlName="propertyDescription"/>
+            </div>
+        
+            <div class="form-field">
+                <label >Title</label>
+                <input type="text"   formControlName="title"/>
+            </div>
+            <div class="form-field">
+                <label>Ownership Type</label>
+                <select  formControlName="ownershipType"   >
+                    <option *ngFor="let type of ownership_type" [value]="type.value" >{{type.viewValue}}</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label>Address</label>
+                <input type="text" formControlName="propertyAddress"/>
+            </div>
+
+            <div class="form-field">
+                <label>Property Status</label>
+                <select  formControlName="propertyStatus">
+                    <option *ngFor="let status of property_status" [value]="status.value" >{{status.viewValue}}</option>
+                </select>
+            </div>
+      
+        </div>
+
+        <div class="form-section">
+            <div class="form-field">
+                <label>Purpose</label>
+                <select formControlName="propertyPurpose">
+                    <option *ngFor="let purpose of property_purpose" [value]="purpose.value">{{purpose.viewValue}}</option> 
+                </select>
+            </div>
+                
+            <div class="form-field">
+                <label>Rent Frequency</label>
+                <select  formControlName="rentFrequency">
+                    <option *ngFor="let  frequency of rent_frequency" [value]="frequency.value">{{frequency.viewValue}}</option>
+                </select>
+            </div>
+            
+            <div class="form-field">
+                <label for=>Price</label>
+                <input type="text" formControlName="price"/>
+            </div>
+            <div class="form-field">
+                <label>Cover Photo</label>
+                <input type="text" formControlName="coverPhoto" />
+            </div>
+        
+            <div class="form-field">
+                <label for="wheelchair">Cover Video</label>
+                <input  type="text" formControlName="coverVideo" />
+            </div>
+            
+            <div class="form-field">
+                <label for="garden">Contact  Name</label>
+                <input type="text" formControlName="contactName" />
+            </div>
+            
+            <div class="form-field">
+                <label for="balcony">Phone Number</label>
+                <input type="text" formControlName="phoneNumber" />
+            </div>
+            
+            <div class="form-field">
+                <label >Email Address</label>
+                <input type="text" formControlName="emailAddress">
+            </div>
+            
+            <div class="form-field">
+                <label >Property Type </label>
+                <select formControlName="propertyType">
+                    <option *ngFor="let type of property_type" [value]="type.value" >{{type.viewValue}}</option>
+                </select>
+            </div>
+        </div>
+        </div>
+        <div class="form-actions">
+            <button  (click)="saveProperty()"> Save </button>
+            <button (click)="closeForm()"> Close</button>
+            <button (click)="resetForm()"> Reset </button>
+        </div>
+        
+    </form>
+</div>    

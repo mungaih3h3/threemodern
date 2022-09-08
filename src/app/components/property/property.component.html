@@ -1,0 +1,87 @@
+<div class="holder" *ngIf="selected == 'Property Type'"  (click)="closeSidebar()"  [ngStyle]="sideIsClosed ? expand : contract" >
+
+     <div class="wrapper" *ngIf="action">
+      <div   class="action-tools">
+        <div class="dropdown">
+          <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class='bx bx-user-circle'></i>For
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class='bx bx-calendar'></i> Anytime
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+      </div> 
+     <app-tool-bar (event)="operateOnTable($event)"  [columns]="columns"></app-tool-bar> 
+    </div>
+      <div class="card requests">
+        <div class="card-header border-transparent">
+        <h3 class="card-title">Property</h3>
+        <div class="card-tools">
+          <input type="text"  name="table_search"  placeholder="Filter" [formControl]="filter">
+        <button type="button" class="btn btn-tool" data-card-widget="remove">
+        <i class="fas fa-search"></i>
+        </button>
+
+        <button type="button" class="btn btn-tool" data-card-widget="remove">
+          <i class='bx bxs-wrench' (click)="toggleActions()"></i>
+        </button>
+
+        <button type="button" class="btn btn-tool" data-card-widget="remove">
+            <i class="fas fa-plus" (click)="openSection('add',null)"></i>
+        </button>
+
+        </div>
+        </div>
+        
+        <div class="card-body p-0">
+        <div class="table-responsive">
+
+       
+        <table class="table m-0"*ngIf="property$" #propertytb>
+          <thead>
+            <tr >
+              <th *ngFor="let column of columns ">{{column}}</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let property of property$ | async; index as i" (click)="openSection('details',i)"  > 
+                <td><ngb-highlight [result]="property.propertyCode" [term]="filter.value"></ngb-highlight></td>
+                <td><ngb-highlight [result]="property.propertyName" [term]="filter.value"></ngb-highlight></td>
+                <td><ngb-highlight [result]="property.title" [term]="filter.value"></ngb-highlight></td>
+                <td><ngb-highlight [result]="property.propertyDescription" [term]="filter.value"></ngb-highlight></td>
+                <td><ngb-highlight [result]="property.propertyPurpose" [term]="filter.value"></ngb-highlight></td>
+                <td><ngb-highlight [result]="property.price | number"  [term]="filter.value"></ngb-highlight></td>
+            </tr>
+          </tbody>
+          </table> 
+        </div>
+        </div>
+    </div>
+
+      <div class="d-flex">
+      <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshProperty()">
+      </ngb-pagination>
+
+      <select class="page-items"  [(ngModel)]="pageSize" (ngModelChange)="refreshProperty()">
+        <option [ngValue]="4">4 items per page</option>
+        <option [ngValue]="6">6 items per page</option>
+        <option [ngValue]="8">8 items per page</option>
+      </select>
+      </div>
+</div>
+<app-house (event)="restore($event)" *ngIf= " selected =='add'"></app-house>
+<app-property-details (event)="restore($event)" *ngIf= " selected =='details'" [property]="property" [index]="index" ></app-property-details>
+

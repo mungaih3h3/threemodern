@@ -1,0 +1,36 @@
+.holder{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5px;
+    row-gap: 10px;
+}
+
+.section-content{
+    min-height: 100%;
+}
+
+img{
+    height: 69.67px; 
+    width: 69.67px;
+}
+
+.card{
+    width: fit-content !important;
+    margin: 0 !important;
+}
+
+.card-body{
+    background-color: white;
+}
+
+.card-footer{   
+    width: 100%;
+}
+
+.card-footer a{
+    color:white
+}
+
+.btn{
+    margin: 0 5px;
+}

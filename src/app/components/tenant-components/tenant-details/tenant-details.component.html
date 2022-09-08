@@ -1,0 +1,190 @@
+<div class="holder" (click)="closeSidebar()"  [ngStyle]="sideIsClosed ? expand : contract ">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card card-primary card-outline">
+                    <div class="card-body box-profile">
+                        <div class="text-center">
+                        <img class="profile-user-img img-fluid img-circle" height="120px" width="120px" src="../../../../assets/images/default-user.jpg" alt="User profile picture">
+                        </div>
+                        <h3 class="profile-username text-center">{{tenant[index].tenant.firstName}} {{tenant[index].tenant.middleName}}</h3>
+                        <p class="text-muted text-center"></p>
+                        <ul class="list-group list-group-unbordered mb-3">
+                        
+                        
+                        <li class="list-group-item">
+                        <b>Invoices </b> <a class="float-right">{{tenant[index].invoices.length}}</a>
+                        </li>
+                        <li class="list-group-item">
+                        <b>Complaints</b> <a class="float-right">2</a>
+                        </li>
+                        <li class="list-group-item">
+                        <b>Since</b> <a class="float-right">{{tenant[index].fromDate[2]}}, {{tenant[index].fromDate[1]}}, {{tenant[index].fromDate[0]}}</a>
+                        </li>
+                        </ul>
+                        <a class="btn btn-primary btn-block" (click)="return()"><b>Return</b></a>
+                    </div>
+                </div>
+
+                <div class="card card-primary">
+                    <div class="card-header bg-primary">
+                    <h3 class="card-title">About Tenant</h3>
+                    </div>
+                    <div class="card-body">
+                        <strong><i class="fa fa-building mr-1" ></i>Property</strong>
+                        <p class="text-muted">
+                            {{tenant[index].propertyUnit.unitCode}}
+                        </p>
+                        <hr>
+                        <strong><i class="fa fa-home mr-1"></i>Unit</strong>
+                        <p class="text-muted">{{tenant[index].propertyUnit.unitName}}</p>
+                        <hr>
+                        <strong><i class="fa fa-phone mr-1"></i>Tel</strong>
+                        <p class="text-muted">
+                            {{tenant[index].tenant.phoneNumber}}
+                        </p>
+                        <hr>
+                        <strong><i class="fa fa-envelope mr-1"></i>Email</strong>
+                        <p class="text-muted">{{tenant[index].tenant.emailAddress}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+            <div class="card">
+            <div class="card-header p-2">
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Activity</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sms" data-toggle="tab">Sms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#notice" data-toggle="tab">Notice</a></li>
+                </ul>
+            </div>
+
+            <div class="card-body">
+            <div class="tab-content">
+                <div class="tab-pane active" id="activity">
+                <div class="timeline timeline-inverse">
+                <div class="time-label">
+                <span class="bg-danger">
+                2017
+                </span>
+                </div>
+
+                <div>
+                    <i class="fas fa-user bg-info"></i>
+                    <div class="timeline-item">
+                    <span class="time">1500 Oct 8</span>
+                    <h3 class="timeline-header border-0"><a >{{tenant[index].tenant.firstName}} </a>made a tenancy request
+                    </h3>
+                    </div>
+                </div>
+
+                <div>
+                    <i class="fas fa-user bg-info"></i>
+                    <div class="timeline-item">
+                    <span class="time">1500 Oct 16</span>
+                    <h3 class="timeline-header border-0"><a >{{tenant[index].tenant.firstName}} </a>moved to the property
+                    </h3>
+                    </div>
+                </div>
+
+                <div>
+                    <i class="fas fa-envelope bg-primary"></i>
+                    <div class="timeline-item">
+                    <span class="time">1500 Dec 8</span>
+                    <h3 class="timeline-header"><a >You </a> sent {{tenant[index].tenant.firstName}} an email</h3>
+                    <div class="timeline-body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Architecto nihil asperiores expedita debitis accusmus officia, 
+                    nemo maiores commodi incidunt doloremque! Modi error ut qui architecto
+                    doloremque alias odio consectetur rerum?
+                    </div>
+                    <div class="timeline-footer">
+                    <a  class="btn btn-primary btn-sm">Read more</a>
+                    <a  class="btn btn-danger btn-sm">Delete</a>
+                    </div>
+                    </div>
+                </div>
+
+                <div>
+                <i class="fas fa-comments bg-warning"></i>
+                <div class="timeline-item">
+                <span class="time">1300 Dec 8</span>
+                <h3 class="timeline-header"><a >{{tenant[index].tenant.firstName}} </a>raised a complaint</h3>
+                <div class="timeline-body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Id unde consequuntur consequatur, possimus ducimus, quas suscipit ut in,
+                    sit atque nisi veniam odio maxime blanditiis doloremque corporis eius soluta perspiciatis?
+                </div>
+                <div class="timeline-footer">
+                <a  class="btn btn-warning btn-flat btn-sm">View complaint</a>
+                </div>
+                </div>
+                </div>
+
+                <div class="time-label">
+                <span class="bg-success">
+                2022
+                </span>
+                </div>
+
+                <div>
+                <i class="fas fa-camera bg-purple"></i>
+                <div class="timeline-item">
+                <span class="time"><i class="far fa-clock"></i> 2 days ago</span>
+                <h3 class="timeline-header"><a >{{tenant[index].tenant.firstName}} </a> uploaded new photos</h3>
+                <div class="timeline-body">
+                <img src="https://placehold.it/150x100" alt="...">
+                <img src="https://placehold.it/150x100" alt="...">
+                <img src="https://placehold.it/150x100" alt="...">
+                <img src="https://placehold.it/150x100" alt="...">
+                </div>
+                </div>
+                </div>
+
+                <div>
+                </div>
+                </div>
+                </div>
+
+                <div class="tab-pane" id="sms">
+                    <form class="form-vertical">
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                        <Textarea type="email" class="form-control shadow-none" id="inputName" placeholder="Message"></Textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                    <div class="col-sm-12">
+                    <button type="submit" class="bg-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i>Send</button>
+                    </div>
+                    </div>
+                    </form>
+                </div>
+
+                <div class="tab-pane" id="invoice">
+                    <form class="form-vertical">
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                        <Textarea type="email" class="form-control shadow-none" id="inputName" placeholder="The notices should go here"></Textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                    <div class="col-sm-12">
+                    <button type="submit" class="bg-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i>Send</button>
+                    </div>
+                    </div>
+                    </form>
+                </div>
+
+                                                                                                    </div>
+
+
+                </div>
+            </div>
+
+            </div>
+        </div>
+     </div>
+</div>

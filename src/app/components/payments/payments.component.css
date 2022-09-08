@@ -1,0 +1,40 @@
+.form-control {
+  width: 150px !important;
+}
+
+.wrapper {
+  margin-bottom: 10px;
+}
+
+.search-bar {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  right: 0;
+  height: 50px;
+  width: 50vh;
+}
+
+.payment {
+  cursor: pointer;
+}
+
+.payment:first-of-type {
+  margin-top: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-divider {
+  background-color: black !important;
+}
+
+.table-row {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}

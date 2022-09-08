@@ -1,0 +1,28 @@
+input[type=text]:first-of-type{
+    margin-top: 0;
+}
+
+label:first-of-type, label:nth-of-type(2){
+  display: inline-block;
+  width: 100%;
+  margin: 10px 0;
+}
+
+label{
+  color: black;
+}
+
+i{
+  font-size: 16px
+}
+
+label:first-of-type{
+  margin-bottom: 5px;
+}
+
+.modal-content {
+  width: 90%;
+  max-width:  550px;
+}
+
+

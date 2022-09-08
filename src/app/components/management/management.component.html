@@ -1,0 +1,230 @@
+<div class=holder (click)="closeSidebar()"  [ngStyle]="sideIsClosed ? expand : contract "> 
+    <div class="tabs"> 
+        <div class="tabs-item"> 
+            <div>
+                <i class="bi bi-person-plus-fill"></i>
+            </div>
+            <div class="info"> 
+                <span>New tenancy Requests</span> 
+                <span>8</span>
+            </div>
+        </div>
+
+        <div class="tabs-item"> 
+            <div>
+                <i class='bx bx-money'></i>
+            </div>
+            <div class="info"> 
+                <span>This month's Expenditure</span> 
+                <span>26800</span>
+            </div>
+        </div>
+
+
+        <div class="tabs-item"> 
+            <div>
+                <i class='bx bxs-wallet'></i>
+            </div>
+            <div class="info"> 
+                <span>Pending Invoices</span> 
+                <span>7</span>
+            </div>
+        </div>
+
+        <div class="tabs-item"> 
+            <div>
+                <i class='bx bxs-wallet-alt'></i>
+            </div>
+            <div class="info"> 
+                <span>Unsettled Bills</span> 
+                <span>12</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="month-report"> 
+        <div class="card-header border-transparent">
+            <h3 class="card-title">Monthly Report</h3>
+            <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" (click)="repMinMax()">
+            <i [ngClass]="repMaximized? 'fas fa-minus': 'fas fa-plus'"></i>
+            </button>
+            </div>
+        </div>
+
+        <div [hidden]="!repMaximized" class="month-rep-content">
+            <div class="content-item">
+                <canvas baseChart width="500px" height="200px"
+                [type]="'line'"
+                [data]="lineChartData"
+                [options]="lineChartOptions"
+                [legend]="lineChartLegend">
+                </canvas>
+            </div>
+
+            <div class="content-item"> 
+                <div class="col-md-12">
+                    <p class="text-center">
+                    <strong>Goal Completion</strong>
+                    </p>
+                    <div class="progress-group">
+                    Have paid this month rent
+                    <span class="float-right"><b>160</b>/200</span>
+                    <div class="progress progress-sm">
+                    <div class="progress-bar bg-primary" style="width: 80%"></div>
+                    </div>
+                    </div>
+                    
+                    <div class="progress-group">
+                    Haven't completed previous month fees
+                    <span class="float-right"><b>310</b>/400</span>
+                    <div class="progress progress-sm">
+                    <div class="progress-bar bg-danger" style="width: 75%"></div>
+                    </div>
+                    </div>
+                    
+                    <div class="progress-group">
+                    <span class="progress-text">Settled this year's fees </span>
+                    <span class="float-right"><b>480</b>/800</span>
+                    <div class="progress progress-sm">
+                    <div class="progress-bar bg-success" style="width: 60%"></div>
+                    </div>
+                    </div>
+                    
+                    <div class="progress-group">
+                    Tenancy Inquiries
+                    <span class="float-right"><b>250</b>/500</span>
+                    <div class="progress progress-sm">
+                    <div class="progress-bar bg-warning" style="width: 50%"></div>
+                    </div>
+                    </div>
+                    </div>
+                
+            </div>
+        </div>
+        <div [hidden]="!repMaximized" class="card-footer">
+            <div class="row">
+                <div class="col-sm-3 col-6">
+                    <div class="description-block border-right">
+                    <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span>
+                    <h5 class="description-header">$56,210</h5>
+                    <span class="description-text">TOTAL REVENUE</span>
+                </div>      
+                </div>
+                <div class="col-sm-3 col-6">
+                    <div class="description-block border-right">
+                    <span class="description-percentage text-success"><i class="fas fa-caret-up"></i>7%</span>
+                    <h5 class="description-header">$12,300</h5>
+                    <span class="description-text">EXPENSES</span>
+                </div>      
+                </div>
+                <div class="col-sm-3 col-6">
+                    <div class="description-block border-right">
+                    <span class="description-percentage text-success"><i class="fas fa-caret-up"></i>4%</span>
+                    <h5 class="description-header">$47,910</h5>
+                    <span class="description-text">NET REVENUE</span>
+                </div>      
+                </div>
+                <div class="col-sm-3 col-6">
+                    <div class="description-block border-right">
+                    <span class="description-percentage text-success"><i class="fas fa-caret-up"></i>3%</span>
+                    <h5 class="description-header">$25,000</h5>
+                    <span class="description-text">PLOUGH BACK</span>
+                </div>      
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card requests">
+        <div class="card-header border-transparent">
+        <h3 class="card-title">Pending requests</h3>
+        <div class="card-tools">
+        <button type="button" class="btn btn-tool" data-card-widget="collapse" (click)="reqMinMax()">
+        <i [ngClass] =" reqMaximized ?'fas fa-minus' : 'fas fa-plus'"> </i>
+        </button>
+        </div>
+        </div>
+        
+        <div [hidden]="!reqMaximized" class="card-body p-0">
+        <div class="table-responsive">
+        <table class="table m-0">
+        <thead>
+        <tr>
+        <th>Tenant Name</th>
+        <th>Property</th>
+        <th>Time of Request</th>
+        <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>data</td>
+        <td>data</td>
+        <td>
+        <div class="sparkbar" data-color="#00a65a" data-height="20">data</div>
+        </td>
+        <td><span class="badge bg-success">data</span></td>
+        </tr>
+        <tr>
+        <td>data</td>
+        <td>data</td>    
+        <td>
+        <div class="sparkbar" data-color="#f39c12" data-height="20">data</div>
+        </td>
+        <td><span class="badge bg-warning">data</span></td>
+        </tr>
+        <tr>
+        <td>data</td>
+        <td>data</td>
+        
+        <td>
+        <div class="sparkbar" data-color="#f56954" data-height="20">data</div>
+        </td>
+        <td><span class="badge bg-danger">data</span></td>
+        </tr>
+        <tr>
+        <td>data</td>
+        <td>data</td>
+        <td>
+        <div class="sparkbar" data-color="#00c0ef" data-height="20">data</div>
+        </td>
+        <td><span class="badge bg-info">Processing</span></td>
+        </tr>
+        <tr>
+        <td>data</td>
+        <td>data</td>
+        <td>
+        <div class="sparkbar" data-color="#f39c12" data-height="20">data</div>
+        </td>
+        <td><span class="badge bg-warning">Pending</span></td>
+        </tr>
+        <tr>
+        <td>data</td>
+        <td>data</td>
+        <td>
+        <div class="sparkbar" data-color="#f56954" data-height="20">data</div>
+        </td>
+        <td><span class="badge bg-danger">data</span></td>
+        </tr>
+        <tr>
+        <td>data</td>
+        <td>data</td>
+        <td>
+        <div class="sparkbar" data-color="#00a65a" data-height="20">data</div>
+        </td>
+        <td><span class="badge bg-success">data</span></td>
+        </tr>
+        </tbody>
+        </table>
+        </div>
+        
+        </div>
+        
+        <div [hidden]="!reqMaximized" class="card-footer clearfix">
+        <a  class="btn btn-sm btn-secondary float-right" routerLink="/admin/requests">View all requests</a>
+    </div>
+    </div>
+</div>
+
+<app-add-property-owner-form *ngIf="false"></app-add-property-owner-form>

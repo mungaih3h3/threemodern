@@ -1,0 +1,16 @@
+button:first-of-type{
+    margin-right: 10px;
+}
+
+.card-header{
+    position: relative !important;
+}
+
+.card-header .dropdown-menu{
+    position: absolute !important;
+    top:38px;
+}
+
+.dropdown-menu li{
+    cursor: pointer;
+}

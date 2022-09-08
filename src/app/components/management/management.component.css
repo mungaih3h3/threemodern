@@ -1,0 +1,145 @@
+
+.holder{
+    background-color: #00000008;
+    height: fit-content;
+}
+
+.tabs{ 
+    display: flex;
+    justify-content : space-between;
+    height:15%;
+}
+
+.tabs-item{
+    background-color: white;
+    width: 24%;
+    border-radius: 5px;
+    display: flex;
+    padding: 10px;
+    box-shadow: 1px 1px 1px 1px #cfccc4;
+}
+
+.tabs-item i{
+    padding: 10px;
+    font-size:30px;
+    background-color:red;
+    border-radius:5px;
+    text-align:center;
+    color:white;
+}
+
+.tabs-item span{
+    display: block;
+}
+
+.tabs-item:first-of-type i{
+    background-color:#17A2B8;
+}
+
+.tabs-item:nth-of-type(2) i{
+    background-color:#DC3545;
+}
+
+.tabs-item:nth-of-type(3) i{
+    background-color:#28A745;
+}
+
+
+.tabs-item:last-of-type i{
+    background-color:#FFC107;
+}
+
+.info{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+}
+
+.month-rep-header{
+    width: 100%;
+    padding:10px;
+    border-bottom: 1px solid grey;
+    height:40px;
+}
+
+.month-rep-header i{
+   float: right;
+}
+
+.month-report{
+    margin-top: 10px;
+    background-color: white;
+    box-shadow: 2px 2px 2px 2px #cfccc4;
+}
+
+.month-rep-content{
+    display: flex;
+    height: fit-content;
+}
+
+.highlights{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100% - 40px);
+}
+
+.content-item{
+    width:50%;
+    margin-right:5px;
+    padding:10px;
+}
+
+.content-item:first-of-type{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.card-footer{
+    padding: 20px 15px;
+}
+
+
+.info-box{
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    color: white;
+    font-size: 14px;
+}
+
+.info-box:first-of-type{
+    color: black;
+}
+
+.info-box-icon i{
+  font-size: 35px;
+}
+
+.info-box-content span{
+    display: block;
+    margin: 0 10px;
+}
+
+.requests{
+    margin-top: 20px;
+}
+
+
+@media  screen and (max-width: 720px) {
+     .tabs{
+         flex-direction: column;
+     }
+
+     .tabs-item{
+        width: 100%;
+        margin-bottom: 5px;
+        border-radius: 0;
+     }
+
+}
+

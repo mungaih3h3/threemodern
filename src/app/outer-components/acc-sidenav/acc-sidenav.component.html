@@ -1,0 +1,30 @@
+<ul class="sidenav-acc">
+   <i class="bi bi-x acc-cancel" (click)="closeDrawer()"></i>
+
+
+    <li class="sidebar-item">
+      <a class="sidebar-link" routerLink="/admin/dashboard"><i class="bi bi-arrow-left"></i></a>
+    </li>
+    <li class="sidebar-item">
+      <a class="sidebar-link" routerLink="/myaccount/profile" routerLinkActive="acc-active" (click)="closeDrawer()">Profile and Visibility</a>
+    </li>
+    <li class="sidebar-item">
+      <a class="sidebar-link" routerLink="/myaccount/email" routerLinkActive="acc-active" (click)="closeDrawer()" >Email</a>
+    </li>
+    <li class="sidebar-item">
+      <a class="sidebar-link" routerLink="/myaccount/security" routerLinkActive="acc-active" (click)="closeDrawer()">Security</a>
+    </li>
+    <li class="sidebar-item">
+      <a class="sidebar-link" routerLink="/myaccount/preferences" routerLinkActive="acc-active"(click)="closeDrawer()" >Account preferences</a>
+    </li>
+
+    <li class="sidebar-item">
+        <a class="sidebar-link">Connected accounts</a>
+    </li>
+</ul>
+<router-outlet></router-outlet>
+
+
+
+  
+
